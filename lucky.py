@@ -13,13 +13,20 @@ except Exception as e:
 soup = bs4.BeautifulSoup(res.text, features="html.parser")
 print("Soup created")
 # Open a browser tab for each result
-linkElems = soup.select('a') 
+linkElems = soup.select('.yuRUbf a') 
 print("Link Elems selected")
-numOpen = min(5, len(linkElems))
+# numOpen = min(len(linkElems), 5)
 print(len(linkElems))
-for i in range(numOpen):
+# x = 15
+numOpen = min(5, len(linkElems))
+for i in range(len(linkElems)):
     print(linkElems[i])
-    
-# for i in range(numOpen):
-#     webbrowser.open('https://google.com/' +linkElems[i].get('href'))
-#     print(str(i) +" ==> " 'https://google.com/' +linkElems[i].get('href'))
+    # if x > len(linkElems) - 9:
+    #     break
+    # # x = x + 1
+# n = 15
+# for i in range(5):
+#     webbrowser.open('https://google.com/' +linkElems[n].get('href'))
+#     print(str(i) +" ==> " 'https://google.com/' +linkElems[n].get('href'))
+#     print(linkElems[])
+#     n = n + 1
